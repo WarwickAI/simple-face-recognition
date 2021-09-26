@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-facerecognition2-dev-163706-authRole",
+            "UnauthRoleArn": "arn:aws:iam::818830417445:role/amplify-facerecognition2-dev-163706-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::818830417445:role/amplify-facerecognition2-dev-163706-authRole",
+            "Region": "eu-west-2",
+            "DeploymentBucketName": "amplify-facerecognition2-dev-163706-deployment",
+            "UnauthRoleName": "amplify-facerecognition2-dev-163706-unauthRole",
+            "StackName": "amplify-facerecognition2-dev-163706",
+            "StackId": "arn:aws:cloudformation:eu-west-2:818830417445:stack/amplify-facerecognition2-dev-163706/9c6110b0-1edf-11ec-b0fe-024fb1849a6c",
+            "AmplifyAppId": "d2m5t2je1ksyn5"
+        },
+        "categories": {
+            "auth": {
+                "facerecognition20a338478": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d2m5t2je1ksyn5",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

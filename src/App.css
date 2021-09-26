@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.image {
+  max-width:400px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

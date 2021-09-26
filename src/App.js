@@ -1,7 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 // Import some useful react things
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 // Import some CSS to make everything look a bit nicer
 import './App.css';
 
@@ -24,17 +22,18 @@ function App() {
   function identifyFromFile(event) {
     // While the result is loading, say "Searching..."
     setName('Searching...');
+    setLinks([]);
     
     // Get the file that the user uploaded
     const file = event.target.files[0];
-
-    // Create a URL that we can use to display the photo
-    setImageURL(URL.createObjectURL(file));
 
     // If we can't find a file, cancel. 
     if (!file) {
       return;
     }
+
+    // Create a URL that we can use to display the photo
+    setImageURL(URL.createObjectURL(file));
 
     // Do the magic! 
     Predictions.identify({
@@ -62,7 +61,7 @@ function App() {
         <h3>Whose face is that?</h3>
         <input type="file" onChange={identifyFromFile}></input>
         <p>Upload an image</p>
-        { imageURL && <img className="uploadedImage" src={imageURL} alt="uploaded" ></img>}
+        { imageURL && <img className="image" src={imageURL} alt="uploaded" ></img>}
         <h3>{name}</h3>
         <ul>
         { links.map((link) => <p>{link}</p>)}

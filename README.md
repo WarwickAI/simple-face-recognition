@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+The aim of this guide is to show you how easy it is to use services provided by AWS, to create and deploy AI-based apps to the internet.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The following steps will allow you to create a simple Face Recognition app from scratch yourself, and put it on the internet for others to use. The app takes uploaded images and checks if there are any celebrity faces in the photo. 
 
-## Available Scripts
+If you're stuck, feel free to join the Disord and get some help: 
+https://discord.gg/XYSxrms
 
-In the project directory, you can run:
 
-### `yarn start`
+You'll need to download an install a code editor, like Visual Studio Code
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- These instructions work best using WSL or Linux - follow this guide up to 11 minutes: https://www.youtube.com/watch?v=_fntjriRe48
+- You'll need node JS and NPM, so install those: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You'll need to run the following commands in your terminal, which you can access via clicking on the small warning icon at the bottom of the VSCode editor - see this guide for more help on using the integrated VSCode terminal https://code.visualstudio.com/docs/editor/integrated-terminal 
 
-### `yarn test`
+### Create your boilerplate React app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We're going to start by creating a default React app. This will have all of the configuration and boilerplate code we need to start working.
 
-### `yarn build`
+`npx create-react-app face-recognition`
+`cd face-recognition`
+`npm start` and then head to https://localhost:3000 to check the React app is running correctly!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install amplify
+We need to install a few amplify packages:
+- `npm install -g @aws-amplify/cli`
+- `npm install aws-amplify`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Configure amplify
+We now need to do some amplify configuration. 
+- If the following 2 steps aren't intuitive, you can take a look at this documentation and follow the video guide there: https://docs.amplify.aws/cli/start/install/#configure-the-amplify-cli
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `amplify configure`
+- `amplify init`
 
-### `yarn eject`
+### Add some amplify services 
+- `amplify add auth` - accept the default options here
+- `amplify add predictions` - again, accept the default options
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Start coding!
+Check out src/App.js in this repository to see the code you're going to need to add to get your celebrity face recognition app working. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Go live on the internet
+- `amplify add hosting` - accept all the default options 
+- `amplify publish` - push your work to the internet. Check out the link that gets returned in the terminal to see your app live on the internet.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

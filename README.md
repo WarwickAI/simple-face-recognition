@@ -1,4 +1,8 @@
+# Deploying a Simple Facial Recognition App to the Internet
+
 The aim of this guide is to show you how easy it is to use services provided by AWS, to create and deploy AI-based apps to the internet.
+
+For a demonstration of what you're going to build, head over to https://dev.d2m5t2je1ksyn5.amplifyapp.com/ and upload an image of a celebrity (try this one https://imgur.com/a/qyewBJ6). The app should tell you who the celebrity is. 
 
 The following steps will allow you to create a simple Face Recognition app from scratch yourself, and put it on the internet for others to use. The app takes uploaded images and checks if there are any celebrity faces in the photo. 
 
